@@ -1,0 +1,52 @@
+/* Light/dark friendly card styling */
+:root {
+  --card-bg: #ffffff;
+  --card-border: #eef0f3;
+  --muted: #6c757d;
+  --soft: #f6f8fb;
+}
+
+[data-bs-theme="dark"] :root,
+html.dark :root {
+  --card-bg: #14171a;
+  --card-border: #1f2328;
+  --muted: #9aa4af;
+  --soft: #0f1214;
+}
+
+.contect-section {
+  background: linear-gradient(180deg, var(--soft), transparent 60%);
+}
+
+.contect-card {
+  background-color: var(--card-bg);
+  border-color: var(--card-border) !important;
+  border-radius: 1.25rem;
+}
+
+.contect-card .form-label {
+  font-weight: 600;
+}
+
+.contect-card .form-control {
+  border-radius: 0.9rem;
+  padding: 0.6rem 0.9rem;
+}
+
+.contect-card .form-control:is(:focus) {
+  box-shadow: 0 0 0 .25rem rgba(13,110,253,.15);
+}
+
+.contect-info .label {
+  display: inline-block;
+  min-width: 72px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+/* Small tweaks for mobile */
+@media (max-width: 576px) {
+  .contect-card .btn {
+    width: 100%;
+  }
+}

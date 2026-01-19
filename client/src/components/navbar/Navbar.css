@@ -1,0 +1,44 @@
+/* Navbar.css */
+
+.icon-link {
+  font-size: 30px;
+  color: black;
+  transition: 0.3s ease;
+}
+
+.icon-link:hover {
+  color: #6c63ff;
+  transform: scale(1.1);
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+}
+
+.navbar-nav .nav-link {
+  font-size: 16px;
+  color: #333;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #9d98f7;
+}
+
+@media (max-width: 991px) {
+  .navbar-brand {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .icon-link {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
+}
