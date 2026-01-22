@@ -21,7 +21,7 @@ const Cart = () => {
   }, [cart_code]);
 
   const fetchCart = () => {
-    api.get(`get_cart?cart_code=${cart_code}`)
+    api.get(`get_cart/?cart_code=${cart_code}`)
       .then(res => {
         // toast.success("Cart item added successfully")
         setCartItems(res.data.items || []);

@@ -51,7 +51,7 @@ const ProductPage = ({ setNumberCartItems }) => {
   useEffect(() => {
     if (product.id) {
       console.log(`Checking if product ${product.id} is in cart ${cart_code}...`);
-      api.get(`product_in_cart?cart_code=${cart_code}&product_id=${product.id}`)
+      api.get(`product_in_cart/?cart_code=${cart_code}&product_id=${product.id}`)
         .then(res => {
           console.log("Product in cart API Response:", res.data);
           setInCart(res.data.product_in_cart);
@@ -65,7 +65,7 @@ const ProductPage = ({ setNumberCartItems }) => {
   useEffect(() => {
     setLoading(true);
     console.log(`Fetching product details for slug: ${slug}`);
-    api.get(`product_detail/${slug}`)
+    api.get(`product_detail/${slug}/`)
       .then(res => {
         console.log("Product details API Response:", res.data);
         setProduct(res.data);

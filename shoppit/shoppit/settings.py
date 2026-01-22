@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-l^xxso3jc*cej)0i%j#bfit(^m8tm=_s187l@@0s^4e8v1fk!%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -63,13 +63,15 @@ MIDDLEWARE = [
 ]
 
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
-    "http://localhost:5174",
-    "http://localhost:5175",
+#CORS_ALLOWED_ORIGINS = [
+#   "http://localhost:5173",
+#  "http://localhost:5174",
+#    "http://localhost:5175",
+#   "http://13.204.89.75:5173"
   
-]
+#]
 
+CORS_ALLOW_ALL_HEADERS = True
 
 
 ROOT_URLCONF = 'shoppit.urls'
@@ -180,3 +182,7 @@ SIMPLE_JWT = {
 # Razorpay Keys
 RAZORPAY_KEY_ID = os.getenv("RAZORPAY_KEY_ID", "rzp_test_VyThAPd2W7VJir")
 RAZORPAY_KEY_SECRET = os.getenv("RAZORPAY_KEY_SECRET", "XRcSu1gEJcRZpTigbhudFHh2")
+
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
+

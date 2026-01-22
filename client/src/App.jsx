@@ -9,7 +9,7 @@ import AuthProvider from './components/authprovider/AuthProvider';
 import ErrorPages from './components/ErroPage/ErrorPages';
 import ProductPage from './PRODUCT/ProductPages';
 import Cart from './components/Cart/Cart';
-import Contect from './components/contect/contect';
+import Contect from './components/contect/Contect';
 import About from './pages/About';
 import { useEffect, useState } from 'react';
 import api from './api'; 

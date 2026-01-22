@@ -20,7 +20,7 @@ const HomePage = () => {
 
   useEffect(() => {
     setLoading(true);
-    api.get("products")
+    api.get("products/")
       .then(res => {
         setProducts(res.data);
         setLoading(false);
