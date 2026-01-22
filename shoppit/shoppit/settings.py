@@ -15,6 +15,13 @@ from pathlib import Path
 from decouple import config
 
 from datetime import timedelta
+# Use 'mongodb' as the default host for Docker
+MONGO_HOST = os.getenv('MONGO_HOST', 'mongodb') 
+MONGO_PORT = os.getenv('MONGO_PORT', '27017')
+MONGO_DB = os.getenv('MONGO_DB', 'shoppit_db')
+
+# Construct the URI
+MONGO_URI = f"mongodb://{MONGO_HOST}:{MONGO_PORT}/{MONGO_DB}"
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -98,12 +105,24 @@ WSGI_APPLICATION = 'shoppit.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+   'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
+
+
+#DATABASES = {
+#    "default": {
+#        "ENGINE": "django.db.backends.postgresql",
+#        "NAME": os.getenv("POSTGRES_DB", "shoppit_db"),
+#        "USER": os.getenv("POSTGRES_USER", "shoppit_user"),
+#        "PASSWORD": os.getenv("POSTGRES_PASSWORD", "shoppit_pass"),
+#        "HOST": os.getenv("POSTGRES_HOST", "postgres"),
+#        "PORT": "5432",
+#    }
+#}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
